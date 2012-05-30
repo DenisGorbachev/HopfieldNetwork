@@ -2,6 +2,7 @@
 <?php
 
 set_time_limit(10);
+set_include_path(get_include_path().PATH_SEPARATOR.__DIR__.'/vendor/pear-pear/Math_Vector'.PATH_SEPARATOR.__DIR__.'/vendor/pear-pear/Math_Matrix');
 
 $loader = require(__DIR__.'/vendor/autoload.php');
 
