@@ -50,7 +50,9 @@ class RecognizeCommand extends Command
         foreach ($inputs as $patternToBe) {
             $output->writeln('Recognizing');
             $this->printMatrix(array($patternToBe));
+            $iterationCount = 0;
             do {
+                $iterationCount++;
                 $updated = false;
                 $indexes = range(0, $arity-1);
                 for ($n = 0; $n < $arity; $n++) {
@@ -69,6 +71,7 @@ class RecognizeCommand extends Command
             } while ($updated);
             $output->writeln('as');
             $this->printMatrix(array($patternToBe));
+            $output->writeln('in '.$iterationCount.' iteration'.($iterationCount > 1? 's' : ''));
             $output->writeln('');
         }
     }
