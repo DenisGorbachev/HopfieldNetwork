@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+
+set_time_limit(10);
+
+$loader = require(__DIR__.'/vendor/autoload.php');
+
+use Symfony\Component\Console\Application;
+use HopfieldNetwork\Command\RecognizeCommand;
+
+$application = new Application();
+$application->add(new RecognizeCommand());
+$application->run();
