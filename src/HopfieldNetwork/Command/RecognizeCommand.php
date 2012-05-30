@@ -41,10 +41,6 @@ class RecognizeCommand extends Command
         $this->printMatrix($patterns);
         $output->writeln('');
 
-        $output->writeln('Weigth matrix:');
-        $this->printMatrix($weights);
-        $output->writeln('');
-
         mt_srand($input->getOption('seed'));
 
         foreach ($inputs as $patternToBe) {
@@ -66,7 +62,7 @@ class RecognizeCommand extends Command
                         $sum += $patternToBe[$j]*$weight;
                     }
                     $patternToBe[$index] = ($sum >= 0)? 1 : 0;
-                    $updated = $oldValue != $patternToBe[$index];
+                    $updated |= $oldValue != $patternToBe[$index];
                 }
             } while ($updated);
             $output->writeln('as');
