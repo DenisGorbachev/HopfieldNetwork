@@ -1,13 +1,6 @@
 {
-    "repositories": [
-        {
-            "type": "pear",
-            "url": "http://pear.php.net"
-        }
-    ],
     "require": {
-        "symfony/console": "2.0.14",
-        "pear-pear/Math_Matrix": "*"
+        "symfony/console": "2.0.14"
     },
     "autoload":{
         "psr-0":{
